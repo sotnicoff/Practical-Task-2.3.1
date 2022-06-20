@@ -27,7 +27,7 @@ public class UserController {
         return "editPage";
     }
 
-    @PostMapping(value = "/edit")
+    @PutMapping(value = "/edit")
     public String edit(@ModelAttribute User user) {
         userService.update(user);
         return "redirect:/users";
@@ -44,7 +44,7 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @GetMapping(value = "/delete/{id}")
+    @DeleteMapping(value = "/delete/{id}")
     public String delete(@PathVariable long id) {
         userService.delete(id);
         return "redirect:/users";
